@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#191970">
+  <title>Learn IT Academy</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Learn IT Academy home">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <span>Learn IT Academy</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
+      <a href="#lessons">Lessons</a>
+      <a href="#practice">Practice</a>
+      <button class="nav-account" id="accountButton" type="button">Log in</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Professional HTML5 learning</p>
+        <h1>Build the modern web with confidence.</h1>
+        <p>Follow a practical curriculum covering semantic structure, forms, multimedia, accessibility, APIs, and responsive foundations.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#lessons">Start learning</a>
+          <button class="hero-secondary" id="continueButton" type="button">Continue learning</button>
+        </div>
+        <div class="learning-stats" aria-label="Learning progress">
+          <div><strong id="completedStat">0</strong><span>Completed</span></div>
+          <div><strong id="quizStat">0%</strong><span>Quiz accuracy</span></div>
+          <div><strong id="streakStat">0</strong><span>Day streak</span></div>
+        </div>
+      </div>
+      <div class="code-preview" aria-label="HTML code example">
+        <div class="code-top"><span></span><span></span><span></span></div>
+        <pre><code>&lt;main&gt;
+  &lt;article&gt;
+    &lt;h1&gt;Your next skill&lt;/h1&gt;
+    &lt;p&gt;Learn. Practice. Grow.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;</code></pre>
+      </div>
+    </section>
+
+    <section class="lesson-layout" id="lessons">
+      <aside class="lesson-list" aria-label="Course lessons">
+        <p class="aside-label">HTML5 course</p>
+        <div id="lessonTabs"></div>
+      </aside>
+
+      <article class="lesson-card" id="lessonCard">
+        <div class="lesson-heading">
+          <p id="lessonNumber" class="lesson-number"></p>
+          <h2 id="lessonTitle"></h2>
+        </div>
+        <div id="lessonContent" class="lesson-content"></div>
+        <section class="quiz-panel" aria-labelledby="quizTitle">
+          <div class="quiz-heading">
+            <h3 id="quizTitle">Knowledge check</h3>
+            <span id="quizScore">0 answered</span>
+          </div>
+          <div id="quizQuestions"></div>
+          <button id="checkQuiz" class="secondary-action" type="button">Check answers</button>
+        </section>
+        <div class="lesson-actions">
+          <button id="previousLesson" class="text-action" type="button">Previous</button>
+          <button id="nextLesson" class="primary-action" type="button">Next lesson</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="practice" id="practice">
+      <div>
+        <p class="eyebrow">Live practice</p>
+        <h2>Write and preview HTML</h2>
+        <p>Experiment with semantic elements. Your work is saved locally on this device.</p>
+      </div>
+      <div class="practice-grid">
+        <div class="editor-wrap">
+          <label for="htmlEditor">HTML editor</label>
+          <textarea id="htmlEditor" spellcheck="false" aria-describedby="saveStatus"><main>
+  <h1>Hello, HTML5!</h1>
+  <p>Create something meaningful.</p>
+</main></textarea>
+          <span id="saveStatus" class="save-status">Saved locally</span>
+        </div>
+        <div class="preview-wrap">
+          <p>Preview</p>
+          <iframe id="htmlPreview" title="HTML practice preview" sandbox="allow-scripts"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Learn IT Academy</p>
+  </footer>
+
+  <div class="modal-backdrop" id="authBackdrop" hidden>
+    <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal-close" id="closeAuth" type="button" aria-label="Close account dialog">×</button>
+      <div id="authContent"></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
